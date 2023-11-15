@@ -14,9 +14,11 @@ library(gtsummary)
 library(flextable)
 library(tidyr)
 
+# This is a change
+
 # 1: Import Data ----
 # * 1.1 Read in xpt datasets ----
-finaldat <- readRDS("../Lesson_2/finaldat.RDS")
+finaldat <- readRDS("./finaldat.RDS")
 
 # 2: Explore/Summarize Data ----
 # * 2.1. Descriptive Statistics Tables ----
@@ -120,7 +122,7 @@ saveRDS(pkplot_doseage,file="pkplot_doseage.RDS")
 ?pkmodel
 
 basemod <- pkmodel(numCompartments = 1,
-                   absorption = "FirstOrder",
+                   absorption = "FirstOrder",   #This is a character string, doesn't exist in file
                    data = finaldat,
                    columnMap = FALSE,           #map columns after model creation
                    modelName = "basemod")
